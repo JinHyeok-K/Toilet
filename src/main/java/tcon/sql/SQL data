@@ -1,0 +1,32 @@
+        t_num int AI PK   // 화장실 번호 PK
+        t_num2 int         // 각 지역 화장실 번호
+        t_type text        // 구분(공중이냐 개방이냐)
+        t_name text         // 화장실 이름
+        t_address_1st text  // 화장실 주소 (도로명)
+        t_address_2nd text  // 화장실 주소 (지번)
+        t_combine text      // 남녀 공용화장실 인지 아닌지
+        t_man_big int       // 남성용 대변기 수
+        t_man_small int     // 남성용 소변기 수
+        t_man_big_sick int  // 남성 장애인용 대변기 수
+        t_man_small_sick int    // 장애인용 소변기 수
+        t_man_big_baby int      // 남자 어린이용 대변기 수
+       t_man_small_baby int     // 남자 어린이용 소변기 수
+        t_woman_big int         // 여성용 대변기 수
+        t_woman_big_sick int    // 여성 장애인용 대변기 수
+        t_woman_big_baby int    // 여자  어린이용 대변기 수
+        t_admin text            // 관리 기관 명
+        t_call_num text         // 전화번호
+        t_open_time text        // 개방 시간
+        t_set_up text           // 설치 연월
+        t_lat text              // 위도
+        t_lng text              // 경도
+        t_owner text            // 화장실 소유 구분
+        t_setup_type text       // 화장실 설치 장소 유형
+        t_process text          // 오물 처리 방식 (수세식 | 푸세식)
+        t_bell text             // 비상벨 설치 유무
+        t_bell_setup text       // 비상벨 설치 장소
+        t_cctv text             // CCTV 설치 유무
+        t_babypants_1 text      // 기저귀 교환대 유무
+        t_babypants_2 text      // 기저귀 교환대 장소
+        t_remodeling_date text  // 리모델링 날짜
+        t_data_date text        // 데이터 기준 날짜
