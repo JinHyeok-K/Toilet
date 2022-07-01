@@ -3,17 +3,21 @@ package tcon.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Getter @Setter @ToString
 @AllArgsConstructor @NoArgsConstructor
 @Builder
-@Table(name="toilet")
-public class ToiletEntity {
-  //  @Id
-  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int tnum;               // 화장실 번호 PK
-    private int tnum2;              // 지역별 화장실 번호 PK
+@Table(name="total_toilet_info")
+public class ToiletEntity  {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "t_num")
+    private int t_num;               // 화장실 번호 PK
+    @Column(name = "t_num2")
+    private int t_num2;              // 지역별 화장실 번호 PK
     private String t_type;          // 구분( 개방? 공중? )
     private String t_name;          // 화장실 이름
     private String t_address_1st;   // 화장실 주소 (도로명)

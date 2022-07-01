@@ -7,8 +7,8 @@ import tcon.domain.ToiletEntity;
 @Builder @ToString
 public class ToiletDto {
 
-    private int tnum;               // 화장실 번호 PK
-    private int tnum2;              // 지역별 화장실 번호 PK
+    private int t_num;               // 화장실 번호 PK
+    private int t_num2;              // 지역별 화장실 번호 PK
     private String t_type;          // 구분( 개방? 공중? )
     private String t_name;          // 화장실 이름
     private String t_address_1st;   // 화장실 주소 (도로명)
@@ -42,8 +42,8 @@ public class ToiletDto {
 
     public ToiletEntity toentity(){
         return ToiletEntity.builder()
-                .tnum(this.tnum)                         // 화장실 번호 PK
-                .tnum2(this.tnum)                        // 지역별 화장실 번호 PK
+                .t_num(this.t_num)                         // 화장실 번호 PK
+                .t_num2(this.t_num2)                        // 지역별 화장실 번호 PK
                 .t_type(this.t_type)                     // 구분( 개방? 공중? )
                 .t_name(this.t_name)                      // 화장실 이름
                 .t_address_1st(this.t_address_1st)       // 화장실 주소 (도로명)
