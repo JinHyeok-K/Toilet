@@ -3,6 +3,9 @@ package tcon.service;
 import com.google.code.geocoder.Geocoder;
 import com.google.code.geocoder.GeocoderRequestBuilder;
 import com.google.code.geocoder.model.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.omg.CORBA.Object;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tcon.domain.ToiletEntity;
@@ -19,55 +22,26 @@ public class ToiletSerivece {
     @Autowired
     private ToiletRepository toiletRepository;
 
-    public List<ToiletEntity> getlist(){
-        List<ToiletEntity>  list =   toiletRepository.findallt_address_2nd("세종");
+    public JSONArray getlist(){
+        List<ToiletEntity>  list =   toiletRepository.findallt_address_2nd("안산시");
+
+
+        JSONArray jsonArray = new JSONArray();
+
 
         for( ToiletEntity toilet : list ){
 
-                Float[] floats = findGeoPoint(  "경기도 안산시 상록구 광덕1로 375" );
+            JSONObject jsonObject = new JSONObject();
+
+            jsonObject.put("t_name" , toilet.getT_name());
+            jsonObject.put("t_address_1st" , toilet.getT_address_1st());
+            jsonObject.put("t_address_2nd" , toilet.getT_address_2nd() );
+
+            jsonArray.put(jsonObject);
 
         }
 
-        return null;
-    }
-
-    public  Float[] findGeoPoint(String location) {
-
-        if (location == null) return null;
-
-
-        Geocoder geocoder = new Geocoder();
-        // setAddress : 변환하려는 주소 (경기도 성남시 분당구 등)
-        // setLanguate : 인코딩 설정
-
-        GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress(location).setLanguage("ko")
-                .getGeocoderRequest();
-
-        GeocodeResponse geocoderResponse;
-
-        try {
-             geocoder = new Geocoder();
-             geocoderResponse = geocoder.geocode(geocoderRequest);
-
-            System.out.println(  "asdasd : " +  geocoderResponse  );
-
-            if (geocoderResponse.getStatus() == GeocoderStatus.OK & !geocoderResponse.getResults().isEmpty()) {
-                GeocoderResult geocoderResult=geocoderResponse.getResults().iterator().next();
-                LatLng latitudeLongitude = geocoderResult.getGeometry().getLocation();
-
-                System.out.println(  "asdasd : " +  latitudeLongitude  );
-
-                Float[] coords = new Float[2];
-                coords[0] = latitudeLongitude.getLat().floatValue();
-                coords[1] = latitudeLongitude.getLng().floatValue();
-
-            return coords;
-
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return null;
+        return jsonArray;
     }
 
     @Autowired
