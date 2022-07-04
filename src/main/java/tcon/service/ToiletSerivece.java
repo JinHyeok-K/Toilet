@@ -17,13 +17,23 @@ import java.util.List;
 
 
 @Service
+
 public class ToiletSerivece {
 
     @Autowired
     private ToiletRepository toiletRepository;
 
-    public JSONArray getlist(){
-        List<ToiletEntity>  list =   toiletRepository.findallt_address_2nd("안산시");
+    public String local ;
+//    public void local_area(){
+//
+//        local = area;
+//        return local;
+//    }
+
+
+
+    public JSONArray getlist( ){
+        List<ToiletEntity>  list =   toiletRepository.findallt_address_2nd("안산시 상록구");
 
 
         JSONArray jsonArray = new JSONArray();
