@@ -28,7 +28,7 @@ public class ToiletSerivece {
 
     public JSONArray getlist(String param1, String param2 ){
 
-        // 학원에서 잘 되었나요?? 학원에서는 전부 완료하고 나왔습니다
+
         List<ToiletEntity>  list =   toiletRepository.findallt_address_2nd(param1,param2);
 
 
@@ -55,7 +55,7 @@ public class ToiletSerivece {
             jsonArray.put(jsonObject);
 
         }
-        System.out.println("jsonArray : "+jsonArray);
+       // System.out.println("jsonArray : "+jsonArray);
         return jsonArray;
     }
 
