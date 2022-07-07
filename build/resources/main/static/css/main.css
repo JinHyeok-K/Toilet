@@ -1,0 +1,16 @@
+.info-title {
+    display: block;
+    background: #50627F;
+    color: #fff;
+    text-align: center;
+    height: 24px;
+    line-height:22px;
+    border-radius:5px;
+    padding:0px 10px;
+}
+
+.box {
+    margin-right: 10px;
+    height: 500px;
+    width: 500px;
+}
