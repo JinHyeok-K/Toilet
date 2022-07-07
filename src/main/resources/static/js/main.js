@@ -53,6 +53,30 @@ function getAddr(lat,lng){
 
     }
 
+//function toaddress(address){
+//
+////
+////     $.ajax({
+////            url : "/local_area",
+////            data: my_main_address,
+////            success(re)
+////            alert("ddddd");
+////     })
+//
+//        $.ajax({ 　　
+//            type:'post' 　　,
+//            contentType:'application/json' 　　
+//            data:JSON.stringify(address) 　　,
+//            url: '/test' 　　,
+//            success: function(data) { 　　
+//            　　alert(data); 　　},
+//            error:function(e){
+//            　　　　alert("error:"+e); 　　
+//            }
+//        });
+//
+//
+//}
 
 function toload(address1,address2){
 
@@ -101,6 +125,8 @@ function toload(address1,address2){
         data: param,
         async: false,
         success: function( re ){
+
+
             let markers =  [ ]
 
 

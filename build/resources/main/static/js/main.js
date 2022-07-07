@@ -97,20 +97,16 @@ function toload(address1,address2){
 
     $.ajax({
         url: "/getlist" ,
-        dataType: "json",
-        data: param,
-        async: false,
+        data: my_main_address,
+         async: false,
         success: function( re ){
             let markers =  [ ]
 
 
 
                for( let i=0; i<re.length; i++ ){
-
                 // 주소-좌표 변환 객체를 생성합니다
-                           let geocoder = new kakao.maps.services.Geocoder();
-
-                      let searchaddress = re[i].t_address_2nd; // n번째 화장실 주소
+                           var geocoder = new kakao.maps.services.Geocoder();
 
                       let searchtoilet_name = re[i].t_name; // n번째 화장실 이름
                       let searchtoilet_open_time = re[i].t_open_time;// n번째 화장실 개방 시간

@@ -1,12 +1,10 @@
 package tcon.controller;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import tcon.service.ToiletSerivece;
 
