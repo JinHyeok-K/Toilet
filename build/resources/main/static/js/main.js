@@ -53,6 +53,30 @@ function getAddr(lat,lng){
 
     }
 
+//function toaddress(address){
+//
+////
+////     $.ajax({
+////            url : "/local_area",
+////            data: my_main_address,
+////            success(re)
+////            alert("ddddd");
+////     })
+//
+//        $.ajax({ 　　
+//            type:'post' 　　,
+//            contentType:'application/json' 　　
+//            data:JSON.stringify(address) 　　,
+//            url: '/test' 　　,
+//            success: function(data) { 　　
+//            　　alert(data); 　　},
+//            error:function(e){
+//            　　　　alert("error:"+e); 　　
+//            }
+//        });
+//
+//
+//}
 
 function toload(address1,address2){
 
@@ -97,16 +121,22 @@ function toload(address1,address2){
 
     $.ajax({
         url: "/getlist" ,
-        data: my_main_address,
-         async: false,
+        dataType: "json",
+        data: param,
+        async: false,
         success: function( re ){
+
+
             let markers =  [ ]
 
 
 
                for( let i=0; i<re.length; i++ ){
+
                 // 주소-좌표 변환 객체를 생성합니다
-                           var geocoder = new kakao.maps.services.Geocoder();
+                           let geocoder = new kakao.maps.services.Geocoder();
+
+                      let searchaddress = re[i].t_address_2nd; // n번째 화장실 주소
 
                       let searchtoilet_name = re[i].t_name; // n번째 화장실 이름
                       let searchtoilet_open_time = re[i].t_open_time;// n번째 화장실 개방 시간
