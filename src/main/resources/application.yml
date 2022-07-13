@@ -1,0 +1,9 @@
+server :
+    ssl:
+      enabled: true
+      key-store: file:/home/ec2-user/app/Heartbeat/src/main/resources/tcon2.ptx
+      key-store-password: 13311331
+      key-store-type: PKCS12
+      trust-store: file:/home/ec2-user/app/Heartbeat/src/main/resources/trust.ptx
+      trust-store-password: 13311331
+      port: 443
